@@ -1,0 +1,26 @@
+# 모든 데이터 파일 제외
+*.csv
+*.tsv
+*.xlsx
+*.bam
+*.vcf
+*.fastq
+*.h5
+*.pkl
+*.rds
+
+# 대용량 결과물 제외
+results/
+output/
+data/
+
+# 캐시
+__pycache__/
+*.pyc
+
+# jupyter checkpoint
+.ipynb_checkpoints/
+
+# 환경파일
+.venv/
+.env
