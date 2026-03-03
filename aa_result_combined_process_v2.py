@@ -22,7 +22,10 @@ if len(sys.argv) != 7:
 
 # /mnt/NAS3/home/mary/HL-NF/scratch/ECTRES/results/aaSuite_germline_ms/v1.3.8/GRCh37/minCN4.5/cnsizeMin50000/-1X/calls    
 #     python3 aa_result_combined_process_v2.py ECTRES minCN4.5 cnsizeMin50000 -1X NAS3 aaSuite_germline_ms
-    
+
+# /mnt/NAS3/home/jiwon/HL-NF/scratch/ECTRES/results/aaSuite_germline_ms/v1.3.8/GRCh37/minCN4.5/cnsizeMin50000/-1X/calls/
+#     python3 aa_result_combined_process_v2.py ECTRES minCN4.5 cnsizeMin50000 -1X NAS3 aaSuite_germline_ms
+
 projectName = sys.argv[1]  
 minCN = sys.argv[2]  
 cnzise = sys.argv[3]  
@@ -30,7 +33,7 @@ downsamples = sys.argv[4]
 NAS = sys.argv[5]  
 step = sys.argv[6]
 
-base_path = f'/mnt/{NAS}/home/mary/HL-NF/scratch/{projectName}/results/{step}/v1.3.8/GRCh37/{minCN}/{cnzise}/{downsamples}/calls'
+base_path = f'/mnt/{NAS}/home/jiwon/HL-NF/scratch/{projectName}/results/{step}/v1.3.8/GRCh37/{minCN}/{cnzise}/{downsamples}/calls'
 save_path = f'/mnt/NAS3/home/jiwon/{projectName}/summary/{step}/{downsamples}/'
 os.makedirs(save_path, exist_ok=True)
 
