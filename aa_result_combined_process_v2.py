@@ -25,6 +25,7 @@ if len(sys.argv) != 7:
 
 # /mnt/NAS3/home/jiwon/HL-NF/scratch/ECTRES/results/aaSuite_germline_ms/v1.3.8/GRCh37/minCN4.5/cnsizeMin50000/-1X/calls/
 #     python3 aa_result_combined_process_v2.py ECTRES minCN4.5 cnsizeMin50000 -1X NAS3 aaSuite_germline_ms
+#     python3 aa_result_combined_process_v2.py ECTRES minCN4.5 cnsizeMin50000 1X NAS3 aaSuite_germline_ms
 
 projectName = sys.argv[1]  
 minCN = sys.argv[2]  
@@ -67,7 +68,7 @@ print('Date of today:', manipulate_date)
 path_parts = base_path.split('/')
 relevant_parts = path_parts[-7:-1]
 print(relevant_parts) 
-relevant_parts.insert(0, path_parts[-10])
+relevant_parts.insert(0, path_parts[-9])
 print(relevant_parts)
 formatted_string = '-'.join(relevant_parts)
 
