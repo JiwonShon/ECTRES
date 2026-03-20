@@ -92,10 +92,7 @@ process RUN_ICHORCNA {
     def normalPanelArg = params.normalPanel ? "--normalPanel \"${params.normalPanel}\"" : ""
     """
     set -euo pipefail
-    # --- HARD FIX: 컨테이너 안에서 R이 외부 R 라이브러리를 무조건 보게 ---
-    export R_LIBS="${params.r_libs_user}"     # (안전장치) 일부 환경에서 R_LIBS도 같이 쓰는 경우 방지
-    export R_LIBS_USER=/mnt/NAS3/home/jiwon/ECTRES/R/Rlibs_ichor_R360
-       
+     
     Rscript "${params.runIchorScript}" \\
       --id "${meta.id}" \\
       --WIG "${wig}" \\
@@ -104,13 +101,11 @@ process RUN_ICHORCNA {
       --maxCN ${params.maxCN} \\
       --gcWig "${params.gcWig}" \\
       --mapWig "${params.mapWig}" \\
-      --centromere "${params.centromere}" \\
       ${normalPanelArg} \\
-      --genomeBuild "${params.genomeBuild}" \\
-      --genomeStyle "${params.genomeStyle}" \\
       --chrs "${params.chrs}" \\
       --chrTrain "${params.chrTrain}" \\
       --chrNormalize "${params.chrNormalize}" \\
+      --genomeStyle "${params.genomeStyle}" \\
       --includeHOMD ${params.includeHOMD} \\
       --estimateNormal ${params.estimateNormal} \\
       --estimatePloidy ${params.estimatePloidy} \\
@@ -118,8 +113,6 @@ process RUN_ICHORCNA {
       --scStates "${params.scStates}" \\
       --txnE ${params.txnE} \\
       --txnStrength ${params.txnStrength} \\
-      --minMapScore ${params.minMapScore} \\
-      --libdir ${params.libdir} \\
       --rmCentromereFlankLength ${params.rmCentromereFlankLength} \\
       --fracReadsInChrYForMale ${params.fracReadsInChrYForMale} \\
       --plotFileType "${params.plotFileType}" \\
